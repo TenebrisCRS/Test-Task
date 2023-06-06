@@ -4,8 +4,162 @@
 @import 'libs';
 @import 'global';
 
+.breadcrumbs {
+  padding-top: 40px;
+  margin-bottom: 40px;
 
+  &__list {
+    display: inline-flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+  }
 
+  &__item {
+    padding-right: 50px;
+    position: relative;
+
+    &::after {
+      content: '';
+      background-image: url("../images/dist/sprite.svg#icons--arrow-right");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      position: absolute;
+      width: 9px;
+      height: 10px;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &:last-child {
+      padding-right: 0;
+
+      &::after {
+        display: none;
+      }
+
+      & .breadcrumbs__link {
+        color: $grey;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__link {
+    color: $accent;
+    line-height: 1.4;
+    text-decoration: underline;
+    text-decoration-color: $accent;
+  }
+}
+
+.slider {
+  &__upper-box {
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    color: $black;
+    @extend %sanscapt-400;
+    letter-spacing: -0.03em;
+    font-size: 72px;
+    line-height: 1.03;
+
+    margin-bottom: 40px;
+  }
+
+  &__description-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__text {
+    max-width: 420px;
+  }
+
+  &__lower-box {
+    display: grid;
+    grid-template-areas: 
+    "slider-big slider-small"
+    "slider-big get-box";
+    grid-template-columns: 480px 1fr;
+    grid-template-rows: 1fr 0.6fr;
+  }
+
+  &__list-big {
+    grid-area: slider-big;
+    z-index: 10;
+  }
+
+  &__wrapper {
+    overflow: hidden;
+  }
+
+  &__list {
+    grid-area: slider-small;
+    margin-left: -320px;
+  }
+
+  &__item {
+    margin-right: 15px;
+  }
+
+  &__get-box {
+    grid-area: get-box;
+    justify-self: end;
+    text-align: end;
+    display: flex;
+    align-items: center;
+  }
+
+  &__item-img {
+    object-fit: cover;
+    border-radius: 15px;
+  }
+
+  &__text-container {
+    margin-right: 48px;
+  }
+
+  &__get-link {
+    line-height: 1.4;
+    color: #fff;
+
+    padding: 20px 80px 20px 25px;
+    border-radius: 15px;
+    background-color: $accent;
+
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: url('../images/dist/sprite.svg#icons--get-arrow');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      
+      width: 5px;
+      height: 9px;
+      top: 25px;
+      right: 25px;
+    }
+  }
+}
+
+.slick-next,
+.slick-prev {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+}
 
 
 

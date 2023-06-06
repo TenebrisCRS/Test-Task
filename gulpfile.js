@@ -52,6 +52,7 @@ function sprite () {
 function scripts() {                                                      //Функция для скриптов 
   return src([                                                            //Берём данные из:
     'node_modules/jquery/dist/jquery.js',
+    'node_modules/slick-carousel/slick/slick.js',
     'app/js/main.js'
   ])
     .pipe(concat('main.min.js'))                                          //Перемещаем в файл при помощи плакина gulp-concat
